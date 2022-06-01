@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CameraScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/TranslationApp.unity
+    guid: 5fcd642ba4227ac4dabfda3437d67f63
   m_configObjects: {}
