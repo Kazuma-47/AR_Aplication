@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TranslationApp.unity
     guid: 5fcd642ba4227ac4dabfda3437d67f63
+  - enabled: 1
+    path: Assets/Scenes/GiroscopeTest.unity
+    guid: 60ed28bb306951a4c807971935e2018e
   m_configObjects: {}
