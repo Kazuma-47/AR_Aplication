@@ -19,7 +19,7 @@ public class RotationReciever : MonoBehaviour
         if (_isFlat)
             tilt = Quaternion.Euler(90, 0, 0) * tilt;
         
-        _rigidbody.AddForce(tilt);
+        _rigidbody.AddForce(tilt *2);
         Debug.DrawRay(transform.position + Vector3.up, tilt, Color.blue);
     }
 }

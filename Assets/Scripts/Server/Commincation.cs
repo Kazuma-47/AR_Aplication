@@ -9,7 +9,7 @@ public class Commincation : MonoBehaviour
     private Client _serverCLient;
     void Start()
     {
-        _serverCLient = new Client("ws://192.168.137.1:8080", "joao");
+        _serverCLient = new Client("ws://192.168.137.1:8080", "Game");
         
     }
 
