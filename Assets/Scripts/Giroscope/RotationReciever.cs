@@ -4,7 +4,7 @@ using UnityEngine;
 public class RotationReciever : MonoBehaviour
 {
     private bool _isFlat = true;
-
+    [SerializeField] private int speedModifier = 2; 
     private Rigidbody _rigidbody;
     void Start()
     {
@@ -19,7 +19,7 @@ public class RotationReciever : MonoBehaviour
         if (_isFlat)
             tilt = Quaternion.Euler(90, 0, 0) * tilt;
         
-        _rigidbody.AddForce(tilt *2);
+        _rigidbody.AddForce(tilt *speedModifier);
         Debug.DrawRay(transform.position + Vector3.up, tilt, Color.blue);
     }
 }
