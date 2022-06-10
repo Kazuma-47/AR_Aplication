@@ -7,9 +7,16 @@ public class Commincation : MonoBehaviour
 {
     // Start is called before the first frame update
     private Client _serverCLient;
+    [SerializeField] private string serverIP;
+    static private bool _connected;
     void Start()
     {
-        _serverCLient = new Client("ws://192.168.137.1:8080", "Game");
+        if (_connected != true)
+        {
+            _serverCLient = new Client(serverIP, "Game");
+            _connected = true;
+        }
+
         
     }
 

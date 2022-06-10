@@ -9,14 +9,10 @@ public class PasswordReciever : MonoBehaviour
     public string CorrectPassword;
     [SerializeField] private string serverIP;
     [SerializeField] private int[] _currentSequence = new int[4];
-    private Client Bob;
+    private Commincation Bob;
 
 
-    void Start()
-    {
-        Bob = new Client(serverIP, "joao");
-        
-    }
+    
     public void AddNumberToPassword(int number)
     {
         for (int i = 0; i < _currentSequence.Length; i++)
@@ -36,7 +32,9 @@ public class PasswordReciever : MonoBehaviour
             ResetPassword();
             return;
         }
-        Bob.Send(new Message("Console",currentInput ));  
+
+        Bob = GameObject.Find("DontDestroy").GetComponent<Commincation>();
+        Bob.SendMsg(currentInput);  
     }
     public void ResetPassword()
     {
