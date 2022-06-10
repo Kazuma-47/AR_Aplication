@@ -5,7 +5,7 @@ The features added so far are:
 1. [Camera](mdLibrary/CAMERA.md)
 2. [Vuforia](mdLibrary/VUFORIA.md)
 3. translator that can decode the user input (WIP)
-4. [BallMinigame](mdLibrary/BallMinigame)
+4. [BallMinigame](mdLibrary/BallMinigame.md)
 
 Project Info:  </br>
 Unity version: 2020.3.23f1  
