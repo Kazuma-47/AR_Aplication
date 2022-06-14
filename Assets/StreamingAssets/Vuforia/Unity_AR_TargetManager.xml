@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="qr3" size="0.300000 0.298578" />
+    <ImageTarget name="QR2" size="0.300000 0.167273" />
+    <ImageTarget name="websiteQRCode_noFrame" size="0.300000 0.300000" />
+    <ImageTarget name="dee4ef1966cfcc0ec3c62128cab73102" size="0.300000 0.300000" />
+    <ImageTarget name="RollingBall" size="0.300000 0.300000" />
     <ImageTarget name="TargetNumberpas" size="0.100000 0.087907" />
     <ImageTarget name="niko" size="0.150000 0.107813" />
     <ImageTarget name="cat" size="0.150000 0.169905" />
