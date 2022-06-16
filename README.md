@@ -9,7 +9,7 @@ The features added so far are:
 
 ## essentials for the demo:  
 - [Camera Targets](ImageTargets)  
-- Android Phone (with developer settings unlocked and USB Debugging turned on)
+- Android Phone (with developer settings unlocked and USB Debugging turned on to build to)
 
 
 ## Project Info:  </br>
