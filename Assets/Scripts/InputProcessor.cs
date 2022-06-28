@@ -12,12 +12,13 @@ public class InputProcessor : MonoBehaviour
         Debug.Log(inputField.text);//the input
         if (inputField.text == null) return;
         _answer = inputField.text;
-        ProcessAnswer(_answer);
+        ProcessAnswer(_answer.ToLower());
     }
 
     private void ProcessAnswer(string answer)
     {
-        //Decode het op de manier
+        if (answer == "abc") answer = "123";
+        else if (answer == "hello") answer = "bye";
         outputField.text = answer;
     }
 }
