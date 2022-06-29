@@ -619,12 +619,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886635686}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da15f7ad453374b49af2432d05588812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverIP: ws://192.168.137.1:8080
+  serverIP: ws://zoezo.xyz:8080
 --- !u!114 &886635688
 MonoBehaviour:
   m_ObjectHideFlags: 0

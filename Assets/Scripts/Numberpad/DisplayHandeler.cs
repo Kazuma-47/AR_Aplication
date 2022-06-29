@@ -9,6 +9,6 @@ public class DisplayHandeler : MonoBehaviour
 
     public void UpdateUi(string value)
     {
-        display.text = value;
+            display.text = value;
     }
 }

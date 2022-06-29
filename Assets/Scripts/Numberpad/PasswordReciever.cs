@@ -1,25 +1,26 @@
 ﻿using System;
 using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
-using MClient;
+
 
 public class PasswordReciever : MonoBehaviour
 {
     public string CorrectPassword;
-    [SerializeField] private string serverIP;
+    [SerializeField] private string serverURL;
     [SerializeField] private int[] _currentSequence = new int[4];
-    private Commincation Bob;
-
+    private Commincation _server;
 
     
+
     public void AddNumberToPassword(int number)
     {
         for (int i = 0; i < _currentSequence.Length; i++)
         {
-            if (_currentSequence[i] != 0) continue;
-                _currentSequence[i] = number;
-                GetComponent<DisplayHandeler>().UpdateUi(string.Join("", _currentSequence));
+                    if (_currentSequence[i] != -1) continue;
+                    _currentSequence[i] = number;
+                GetComponent<DisplayHandeler>().UpdateUi(string.Join("", _currentSequence).Replace("-1", "0"));
                 break;
         }
     }
@@ -33,13 +34,17 @@ public class PasswordReciever : MonoBehaviour
             return;
         }
 
-        Bob = GameObject.Find("DontDestroy").GetComponent<Commincation>();
-        Bob.SendMsg(currentInput);  
+        _server = GameObject.Find("DontDestroy").GetComponent<Commincation>();
+        _server.SendMsg(currentInput);  
     }
     public void ResetPassword()
     {
-        Array.Clear(_currentSequence, 0, _currentSequence.Length);
-        GetComponent<DisplayHandeler>().UpdateUi(string.Join(" ", _currentSequence));
+        for (int i = 0; i < _currentSequence.Length; i++)
+        {
+            if (_currentSequence[i] != -1)
+                _currentSequence[i] = -1;
+        }
+        GetComponent<DisplayHandeler>().UpdateUi(string.Join("", _currentSequence).Replace("-1", "0"));
     }
     
 }

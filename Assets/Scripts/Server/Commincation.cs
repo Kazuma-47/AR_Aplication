@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MClient;
 
 public class Commincation : MonoBehaviour
 {
@@ -22,6 +21,6 @@ public class Commincation : MonoBehaviour
 
     public void SendMsg(string keyCode)
     {
-        _serverCLient.Send(new Message("Console", keyCode));  
+        _serverCLient.Send("Console", keyCode);  
     }
 }
