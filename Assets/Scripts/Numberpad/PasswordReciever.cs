@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class PasswordReciever : MonoBehaviour
 {
+    public GameObject VisualConfirm;    
     public string CorrectPassword;
     [SerializeField] private string serverURL;
     [SerializeField] private int[] _currentSequence = new int[4];
@@ -33,9 +34,11 @@ public class PasswordReciever : MonoBehaviour
             ResetPassword();
             return;
         }
-
+        VisualConfirm.SetActive(true);
+        VisualConfirm.GetComponent<DisapearTimer>().DisapearOnTimer(2f);
         _server = GameObject.Find("DontDestroy").GetComponent<Commincation>();
-        _server.SendMsg(currentInput);  
+        _server.SendMsg("ZE HEBBEN DE JUISTE CODE");  
+        ResetPassword();
     }
     public void ResetPassword()
     {

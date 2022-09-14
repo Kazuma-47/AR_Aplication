@@ -21,6 +21,6 @@ public class Commincation : MonoBehaviour
 
     public void SendMsg(string keyCode)
     {
-        _serverCLient.Send("Console", keyCode);  
+        _serverCLient.Send("Zoey", keyCode);  
     }
 }
