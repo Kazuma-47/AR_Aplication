@@ -11,6 +11,7 @@ public class RotationReciever : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody.AddForce(new Vector3(0, gravity,0)); 
     }
 
     // Update is called once per frame
@@ -19,13 +20,16 @@ public class RotationReciever : MonoBehaviour
         Vector3 tilt = Input.acceleration;
         _rigidbody.velocity = new Vector3(tilt.x, gravity, tilt.y) * speedModifier;
     }*/
-    
-   
+
+    void Changeforce(float newGravity)
+    {
+        _rigidbody.AddForce(new Vector3(0,-gravity, 0));
+        gravity = newGravity;
+        _rigidbody.AddForce(new Vector3(0, newGravity,0)); 
+    }
     void Update()
     {
-        _rigidbody.AddForce(new Vector3(0, gravity,0)); 
         Vector3 tilt = Input.acceleration;
-
         if (_isFlat)
             tilt = Quaternion.Euler(90, 0, 0) * tilt;
         tilt.y = gravity;
@@ -43,14 +47,14 @@ public class RotationReciever : MonoBehaviour
         
         else if (change == "rampup")
         {
-            gravity = -0.3f;
+            Changeforce(-0.3f);
             speedModifier = 16f;
             //speedModifier = Mathf.Lerp(speedModifier , 12f, 1f);
 
         }
         else
         {
-            gravity = -7f;
+            Changeforce(-7f);
             speedModifier = 7f;
             //speedModifier = Mathf.Lerp(speedModifier , 10f, 1f);
         }
